@@ -1,4 +1,4 @@
-package com.aca.moviestore.ui;
+package com.aca.moviedb.ui;
 
 import java.util.Scanner;
 
