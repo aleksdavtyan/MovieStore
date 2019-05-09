@@ -1,4 +1,4 @@
-package com.aca.moviedb.people;
+package com.aca.moviesite.people;
 
 import sun.util.resources.LocaleData;
 
@@ -16,5 +16,21 @@ public abstract class Person {
         this.fullName = fullName;
         this.birthDate = birthDate;
         this.bio = bio;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public LocaleData getBirthDate() {
+        return birthDate;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public ArrayList<String> getMovies() {
+        return movies;
     }
 }

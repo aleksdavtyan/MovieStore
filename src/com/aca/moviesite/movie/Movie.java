@@ -1,7 +1,6 @@
-package com.aca.moviedb.movie;
+package com.aca.moviesite.movie;
 
-import com.aca.moviedb.people.Person;
-import sun.util.resources.LocaleData;
+import com.aca.moviesite.people.Person;
 
 import java.util.ArrayList;
 
@@ -9,21 +8,18 @@ import java.util.ArrayList;
 public abstract class Movie {
     protected String title;
     protected String description;
-    protected LocaleData premiereDate;
+    protected String premiereDate;
     protected String genre;
 
-    private double initialRating;
     public ArrayList<Integer> rating;
+    private final double INIT_RATING = 0;
     private Person[] people;
 
-    public Movie() {
-    }
 
-    public Movie(String title, String description, LocaleData premiereDate, String genre) {
+    public Movie(String title, String description, String premiereDate, String genre) {
         this.title = title;
         this.description = description;
         this.premiereDate = premiereDate;
-        this.initialRating = 0;
         this.genre = genre;
     }
 
@@ -38,17 +34,18 @@ public abstract class Movie {
     public String getGenre() {  return title;
     }
 
-    public double getRating() { return initialRating;
+    public double getINIT_RATING() {
+        return INIT_RATING;
     }
 
     public double currentRating() {
-        double calcRating;
+        double calculatedRating;
         double sum = 0;
         for (int i = 0; i < this.rating.size() ; i++) {
             sum += this.rating.get(i);
         }
-        calcRating = sum/(this.rating.size());
-        return calcRating;
+        calculatedRating = sum/(this.rating.size());
+        return calculatedRating;
     }
 
     @Override

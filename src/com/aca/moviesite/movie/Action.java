@@ -1,18 +1,15 @@
-package com.aca.moviedb.movie;
+package com.aca.moviesite.movie;
 
-import com.aca.moviedb.people.Person;
-import sun.util.resources.LocaleData;
+import com.aca.moviesite.people.Person;
 
 public class Action extends Movie {
-    private String title;
-    private String description;
-    private LocaleData premiereDate;
+
     private static final String GENRE = "Action";
 
     private double rating;
     private Person[] people;
 
-    public Action(String title, String description, LocaleData premiereDate) {
+    public Action(String title, String description, String premiereDate) {
             super(title, description, premiereDate, GENRE);
     }
 

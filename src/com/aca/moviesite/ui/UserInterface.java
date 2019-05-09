@@ -1,4 +1,4 @@
-package com.aca.moviedb.ui;
+package com.aca.moviesite.ui;
 
 public abstract class UserInterface {
     /**
