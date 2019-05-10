@@ -5,12 +5,10 @@ import com.aca.moviesite.people.Person;
 public class Comedy extends Movie {
 
     private static final String GENRE = "Comedy";
-
     private double rating;
-    private Person[] people;
 
-    public Comedy(String title, String description, String premiereDate) {
-        super(title, description, premiereDate, GENRE);
+    public Comedy(String title, String description, String premiereDate, Person[] people) {
+        super(title, description, premiereDate, GENRE, people);
     }
 
     @Override

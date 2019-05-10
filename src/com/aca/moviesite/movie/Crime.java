@@ -6,10 +6,9 @@ public class Crime extends Movie {
 
     private static final String GENRE = "Crime";
     private double rating;
-    private Person[] people;
 
-    public Crime(String title, String description, String premiereDate) {
-        super(title, description, premiereDate, GENRE);
+    public Crime(String title, String description, String premiereDate, Person[] people) {
+        super(title, description, premiereDate, GENRE, people);
     }
 
     @Override

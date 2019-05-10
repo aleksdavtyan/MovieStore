@@ -9,6 +9,6 @@ public class UserDB {
     public static HashMap<String, String> users = new HashMap<>();
 
     public static void incrementId() {
-        UserDB.id++;
+        id++;
     }
 }

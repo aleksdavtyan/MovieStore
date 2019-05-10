@@ -8,21 +8,34 @@ import com.aca.moviesite.ui.CommandLineUserInterface;
 public class Admin extends User {
 
     CommandLineUserInterface commandLineUserInterface = new CommandLineUserInterface();
+    private static final Admin admin = new Admin("admin", "admin");
     private static int id;
 
 
-    public Admin() {super();  }
+    public Admin() {
+        super();
+    }
 
     public Admin(String username, String password) {
         super(username, password);
         id = User.getId();
     }
 
-    public void registerUser(User user) {
-        if (!UserDB.users.containsKey(user.getUsername()) && !user.equals(null)) {
+    public static boolean registerAdmin() {
+        if (admin.registerUser(admin))
+            return true;
+        return false;
+    }
+
+    public boolean registerUser(User user) {
+        if (!user.equals(null) && !UserDB.users.containsKey(user.getUsername())) {
             UserDB.users.put(user.getUsername(), user.getPassword());
             UserDB.incrementId();
-        } else commandLineUserInterface.output("The username already exists. Please use a different username.");
+            return true;
+        } else {
+            commandLineUserInterface.output("The username already exists. Please use a different username.");
+        }
+        return false;
     }
 
     public void removeUser(User user) {
@@ -30,6 +43,24 @@ public class Admin extends User {
             UserDB.users.remove(user.getUsername());
         } else commandLineUserInterface.output("The user you are trying delete doesn't exist.");
     }
+
+    public static boolean addMovie(Movie movie) {
+        if (!movie.equals(null)) {
+            MovieDB.movies.add(movie);
+            MovieDB.incrementId();
+            return true;
+        }
+        return false;
+    }
+
+    public boolean removeMovie(Movie movie) {
+        if (MovieDB.movies.contains(movie)) {
+            MovieDB.movies.remove(movie);
+            return true;
+        } else commandLineUserInterface.output("The movie you are trying delete doesn't exist.");
+        return false;
+    }
+
 
     @Override
     public String getUsername() {

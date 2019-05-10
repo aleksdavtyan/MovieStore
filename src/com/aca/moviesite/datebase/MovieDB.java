@@ -8,6 +8,10 @@ public class MovieDB {
 
     private static int id;
 
-    public static ArrayList<Movie> movies;
+    public static ArrayList<Movie> movies = new ArrayList<>();
+
+    public static void incrementId() {
+        id++;
+    }
 
 }

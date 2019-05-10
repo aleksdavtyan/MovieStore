@@ -1,23 +1,16 @@
 package com.aca.moviesite.people;
 
-import sun.util.resources.LocaleData;
-
 import java.util.ArrayList;
 
 public class Director extends Person {
 
-    public Director(String fullName, LocaleData birthDate, String bio) {
-        super(fullName, birthDate, bio);
+    public Director(String fullName, String bio) {
+        super(fullName, bio);
     }
 
     @Override
     public String getFullName() {
         return super.getFullName();
-    }
-
-    @Override
-    public LocaleData getBirthDate() {
-        return super.getBirthDate();
     }
 
     @Override
@@ -28,5 +21,10 @@ public class Director extends Person {
     @Override
     public ArrayList<String> getMovies() {
         return super.getMovies();
+    }
+
+    @Override
+    public String toString() {
+        return "Director " + super.toString();
     }
 }

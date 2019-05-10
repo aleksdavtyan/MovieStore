@@ -12,44 +12,48 @@ public abstract class Movie {
     protected String genre;
 
     public ArrayList<Integer> rating;
-    private final double INIT_RATING = 0;
+//    private final double INIT_RATING = 0;
     private Person[] people;
 
 
-    public Movie(String title, String description, String premiereDate, String genre) {
+    public Movie(String title, String description, String premiereDate, String genre, Person[] people) {
         this.title = title;
         this.description = description;
         this.premiereDate = premiereDate;
         this.genre = genre;
+        this.people = people;
     }
 
-    public String getTitle() {  return title;  }
-
-    public String getDescription() {  return description;
+    public String getTitle() {
+        return title;
     }
 
-    public String getPremiereDate() {  return title;
+    public String getDescription() {
+        return description;
     }
 
-    public String getGenre() {  return title;
+    public String getPremiereDate() {
+        return title;
     }
 
-    public double getINIT_RATING() {
-        return INIT_RATING;
+    public String getGenre() {
+        return title;
     }
 
     public double currentRating() {
         double calculatedRating;
         double sum = 0;
-        for (int i = 0; i < this.rating.size() ; i++) {
+        for (int i = 0; i < this.rating.size(); i++) {
             sum += this.rating.get(i);
         }
-        calculatedRating = sum/(this.rating.size());
+        calculatedRating = sum / (this.rating.size());
         return calculatedRating;
     }
 
-    @Override
-    public String toString() {
-        return String.format("Movie title: %f.\nRating: %f.\nGenre: %f. \nPremiere date: %f.\nDescription: %f.", title, rating, genre, premiereDate, description);
-    }
+//
+//    @Override
+//    public String toString() {
+//        return String.format("Movie title: %f.\nRating: %f.\nGenre: %f.\nPremiere date: %f.\nDescription: %f.\nPeople: %f", getTitle(), currentRating(), getGenre(), getPremiereDate(), getDescription());
+//    }
+
 }
