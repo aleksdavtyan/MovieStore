@@ -1,6 +1,7 @@
 package com.aca.moviesite;
 
 import com.aca.moviesite.datebase.MovieDB;
+import com.aca.moviesite.datebase.UserDB;
 import com.aca.moviesite.movie.*;
 import com.aca.moviesite.people.Actor;
 import com.aca.moviesite.people.Director;
@@ -43,11 +44,11 @@ public class MovieStore {
             user1.rateMovie(spotlight, 6);
         }
 
-        if (user2.signUp(user1)) {
-            user2.signIn(user1);
+        if (user2.signUp(user2)) {
+            user2.signIn(user2);
             user2.rateMovie(theAlgorithm, 7);
             user2.rateMovie(theMask,5);
-            user2.rateMovie(theGodfather,10);
+            user2.rateMovie(theGodfather,8);
             user2.rateMovie(spotlight, 5);
         }
 
@@ -56,8 +57,11 @@ public class MovieStore {
         }
 
         System.out.println(String.format("The rating of The Algorithm = %f", theAlgorithm.currentRating()));
-
         System.out.println(String.format("The rating of The Mask = %f", theMask.currentRating()));
+        System.out.println(String.format("The rating of The Godfather = %f", theGodfather.currentRating()));
+
+        System.out.println("Number of users in the Database= " + UserDB.getId());
+        System.out.println("Number of movies in the Database= " + MovieDB.getId());
 
     }
 }

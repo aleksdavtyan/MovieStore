@@ -14,4 +14,7 @@ public class MovieDB {
         id++;
     }
 
+    public static int getId() {
+        return id;
+    }
 }
