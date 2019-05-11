@@ -9,6 +9,7 @@ import com.aca.moviesite.people.Writer;
 import com.aca.moviesite.user.Admin;
 
 public class MovieStore {
+    private static final Admin admin = new Admin("admin", "admin");
 
     public static void startMovieStore() {
 
@@ -22,8 +23,9 @@ public class MovieStore {
         Movie crime = new Crime("The Godfather", "Widely regarded as one of the greatest films of all time.", "1972-03-25", people2);
         Movie drama = new Drama("Spotlight", "In 2001, editor Marty Baron.", "2015-09-14", people);
 
+        admin.registerUser(admin);
 
-        if (Admin.registerAdmin()) {
+        if (admin.signIn(admin)) {
             Admin.addMovie(action);
             Admin.addMovie(comedy);
             Admin.addMovie(crime);

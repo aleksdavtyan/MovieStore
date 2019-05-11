@@ -8,7 +8,6 @@ import com.aca.moviesite.ui.CommandLineUserInterface;
 public class Admin extends User {
 
     CommandLineUserInterface commandLineUserInterface = new CommandLineUserInterface();
-    private static final Admin admin = new Admin("admin", "admin");
     private static int id;
 
 
@@ -19,12 +18,6 @@ public class Admin extends User {
     public Admin(String username, String password) {
         super(username, password);
         id = User.getId();
-    }
-
-    public static boolean registerAdmin() {
-        if (admin.registerUser(admin))
-            return true;
-        return false;
     }
 
     public boolean registerUser(User user) {
