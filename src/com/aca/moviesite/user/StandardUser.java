@@ -7,6 +7,8 @@ import com.aca.moviesite.movie.Movie;
 public class StandardUser extends User {
 
     private static int id;
+    Admin admin = new Admin();
+
 
     public StandardUser() {super(); }
 
@@ -17,7 +19,6 @@ public class StandardUser extends User {
 
     public boolean signUp(User user) {
         if (!UserDB.users.containsKey(user.getUsername())) {
-            Admin admin = new Admin();
             admin.registerUser(user);
             return true;
         }else return false;
@@ -40,7 +41,7 @@ public class StandardUser extends User {
 
     @Override
     public void rateMovie(Movie movie, Integer rateNumber) {
-        if (rateNumber >= 1 && rateNumber <= 10)
+        if (!movie.equals(null) && rateNumber >= 1 && rateNumber <= 10)
             movie.rating.add(rateNumber);
     }
 

@@ -11,7 +11,7 @@ public abstract class Movie {
     protected String premiereDate;
     protected String genre;
 
-    public ArrayList<Integer> rating;
+    public static ArrayList<Integer> rating = new ArrayList<Integer>();
 //    private final double INIT_RATING = 0;
     private Person[] people;
 

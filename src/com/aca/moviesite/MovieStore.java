@@ -7,9 +7,12 @@ import com.aca.moviesite.people.Director;
 import com.aca.moviesite.people.Person;
 import com.aca.moviesite.people.Writer;
 import com.aca.moviesite.user.Admin;
+import com.aca.moviesite.user.StandardUser;
 
 public class MovieStore {
     private static final Admin admin = new Admin("admin", "admin");
+    private static final StandardUser user1 = new StandardUser("user1", "user111");
+    private static final StandardUser user2 = new StandardUser("user2", "user222");
 
     public static void startMovieStore() {
 
@@ -18,22 +21,43 @@ public class MovieStore {
         Person[] people2 = {new Director("Steven Seagal", "Steven was born in 1974"), new Writer("Angelina Jolie", "Jolie is an American actress, filmmaker, and humanitarian."), new Actor("John Smith", "John was born in 1919")};
 
 
-        Movie action = new Action("Captain Marvel", "Captain Marvel is an extraterrestrial...", "2019-02-27", people);
-        Movie comedy = new Comedy("The Mask", "When bank clerk discovers a magical mask", "1994-07-28", people1);
-        Movie crime = new Crime("The Godfather", "Widely regarded as one of the greatest films of all time.", "1972-03-25", people2);
-        Movie drama = new Drama("Spotlight", "In 2001, editor Marty Baron.", "2015-09-14", people);
+        Movie theAlgorithm = new Action("The Algorithm", "The Algorithm is an extraterrestrial...", "2019-02-27", people);
+        Movie theMask = new Comedy("The Mask", "When bank clerk discovers a magical mask", "1994-07-28", people1);
+        Movie theGodfather = new Crime("The Godfather", "Widely regarded as one of the greatest films of all time.", "1972-03-25", people2);
+        Movie spotlight = new Drama("Spotlight", "In 2001, editor Marty Baron.", "2015-09-14", people);
 
         admin.registerUser(admin);
 
         if (admin.signIn(admin)) {
-            Admin.addMovie(action);
-            Admin.addMovie(comedy);
-            Admin.addMovie(crime);
-            Admin.addMovie(drama);
+            Admin.addMovie(theAlgorithm);
+            Admin.addMovie(theMask);
+            Admin.addMovie(theGodfather);
+            Admin.addMovie(spotlight);
+        }
+
+        if (user1.signUp(user1)) {
+            user1.signIn(user1);
+            user1.rateMovie(theAlgorithm, 8);
+            user1.rateMovie(theMask,9);
+            user1.rateMovie(theGodfather,7);
+            user1.rateMovie(spotlight, 6);
+        }
+
+        if (user2.signUp(user1)) {
+            user2.signIn(user1);
+            user2.rateMovie(theAlgorithm, 10);
+            user2.rateMovie(theMask,8);
+            user2.rateMovie(theGodfather,10);
+            user2.rateMovie(spotlight, 5);
         }
 
         for (Movie movie : MovieDB.movies) {
             System.out.println(movie);
         }
+
+        System.out.println(theAlgorithm.currentRating());
+
+        System.out.println(theMask.currentRating());
+
     }
 }
