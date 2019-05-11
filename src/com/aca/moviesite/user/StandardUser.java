@@ -46,10 +46,10 @@ public class StandardUser extends User {
     }
 
     @Override
-    public String searchMovie(Movie movie) {
+    public String searchMovie(String movieTitle) {
         for (Movie movie1 : MovieDB.movies) {
-            if (movie1.getTitle().equals(movie.getTitle())) {
-                return movie.toString();
+            if (movie1.getTitle().equals(movieTitle)) {
+                return movie1.toString();
             }
         }
         return null;

@@ -36,6 +36,6 @@ public abstract class User {
 
     public abstract void rateMovie(Movie movie, Integer rateNumber);
 
-    public abstract String searchMovie(Movie movie);
+    public abstract String searchMovie(String movieTitle);
 
 }

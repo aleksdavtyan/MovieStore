@@ -7,6 +7,7 @@ import com.aca.moviesite.people.Actor;
 import com.aca.moviesite.people.Director;
 import com.aca.moviesite.people.Person;
 import com.aca.moviesite.people.Writer;
+import com.aca.moviesite.ui.CommandLineUserInterface;
 import com.aca.moviesite.user.Admin;
 import com.aca.moviesite.user.StandardUser;
 
@@ -14,6 +15,7 @@ public class MovieStore {
     private static final Admin admin = new Admin("admin", "admin");
     private static final StandardUser user1 = new StandardUser("user1", "user111");
     private static final StandardUser user2 = new StandardUser("user2", "user222");
+    private static CommandLineUserInterface commandLineUserInterface = new CommandLineUserInterface();
 
     public static void startMovieStore() {
 
@@ -55,13 +57,15 @@ public class MovieStore {
         for (Movie movie : MovieDB.movies) {
             System.out.println(movie);
         }
+        String searchResult = user1.searchMovie("The Mask");
+        commandLineUserInterface.output("The result of \"The Mask\" search is: " + searchResult);
 
-        System.out.println(String.format("The rating of The Algorithm = %f", theAlgorithm.currentRating()));
-        System.out.println(String.format("The rating of The Mask = %f", theMask.currentRating()));
-        System.out.println(String.format("The rating of The Godfather = %f", theGodfather.currentRating()));
+        commandLineUserInterface.output(String.format("The rating of The Algorithm = %f", theAlgorithm.currentRating()));
+        commandLineUserInterface.output(String.format("The rating of The Mask = %f", theMask.currentRating()));
+        commandLineUserInterface.output(String.format("The rating of The Godfather = %f", theGodfather.currentRating()));
 
-        System.out.println("Number of users in the Database= " + UserDB.getId());
-        System.out.println("Number of movies in the Database= " + MovieDB.getId());
+        commandLineUserInterface.output("Number of users in the Database= " + UserDB.getId());
+        commandLineUserInterface.output("Number of movies in the Database= " + MovieDB.getId());
 
     }
 }
