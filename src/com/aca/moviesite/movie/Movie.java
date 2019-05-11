@@ -50,9 +50,9 @@ public abstract class Movie {
     }
 
 
-//    @Override
-//    public String toString() {
-//        return String.format("Movie title: %f.\nRating: %f.\nGenre: %f.\nPremiere date: %f.\nDescription: %f.\nPeople: %f", getTitle(), currentRating(), getGenre(), getPremiereDate(), getDescription());
-//    }
+    @Override
+    public String toString() {
+        return String.format("Movie title: %s.\nRating: %f.\nGenre: %s.\nPremiere date: %s.\nDescription: %s", getTitle(), currentRating(), getGenre().toString(), getPremiereDate(), getDescription());
+    }
 
 }
