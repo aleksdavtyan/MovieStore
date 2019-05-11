@@ -10,7 +10,6 @@ public class StandardUser extends User {
     Admin admin = new Admin();
 
 
-    public StandardUser() {super(); }
 
     public StandardUser(String username, String password) {
         super(username, password);

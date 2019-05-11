@@ -5,7 +5,7 @@ import com.aca.moviesite.people.Person;
 import java.util.ArrayList;
 
 public class Fantasy extends Movie {
-    private static final String GENRE = "Fantasy";
+
     public ArrayList<Integer> rating = new ArrayList<Integer>();
 
     public Fantasy(String title, String description, String premiereDate, Person[] people) {

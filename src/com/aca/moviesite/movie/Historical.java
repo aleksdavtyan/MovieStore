@@ -5,7 +5,7 @@ import com.aca.moviesite.people.Person;
 import java.util.ArrayList;
 
 public class Historical extends Movie {
-    private static final String GENRE = "Historical";
+
     public ArrayList<Integer> rating = new ArrayList<Integer>();
 
     public Historical(String title, String description, String premiereDate, Person[] people) {

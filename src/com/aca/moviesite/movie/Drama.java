@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 public class Drama extends Movie {
 
-    private static final String GENRE = "Drama";
     public ArrayList<Integer> rating = new ArrayList<Integer>();
 
     public Drama(String title, String description, String premiereDate, Person[] people) {
