@@ -6,13 +6,12 @@ import java.util.ArrayList;
 
 
 public abstract class Movie {
-    protected String title;
-    protected String description;
-    protected String premiereDate;
-    protected String genre;
+    private String title;
+    private String description;
+    private String premiereDate;
+    private String genre;
 
-    public static ArrayList<Integer> rating = new ArrayList<Integer>();
-//    private final double INIT_RATING = 0;
+    public ArrayList<Integer> rating = new ArrayList<Integer>();
     private Person[] people;
 
 

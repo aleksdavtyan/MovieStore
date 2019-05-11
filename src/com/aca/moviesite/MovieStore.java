@@ -37,7 +37,7 @@ public class MovieStore {
 
         if (user1.signUp(user1)) {
             user1.signIn(user1);
-            user1.rateMovie(theAlgorithm, 8);
+            user1.rateMovie(theAlgorithm, 10);
             user1.rateMovie(theMask,9);
             user1.rateMovie(theGodfather,7);
             user1.rateMovie(spotlight, 6);
@@ -45,8 +45,8 @@ public class MovieStore {
 
         if (user2.signUp(user1)) {
             user2.signIn(user1);
-            user2.rateMovie(theAlgorithm, 10);
-            user2.rateMovie(theMask,8);
+            user2.rateMovie(theAlgorithm, 7);
+            user2.rateMovie(theMask,5);
             user2.rateMovie(theGodfather,10);
             user2.rateMovie(spotlight, 5);
         }
@@ -55,9 +55,9 @@ public class MovieStore {
             System.out.println(movie);
         }
 
-        System.out.println(theAlgorithm.currentRating());
+        System.out.println(String.format("The rating of The Algorithm = %f", theAlgorithm.currentRating()));
 
-        System.out.println(theMask.currentRating());
+        System.out.println(String.format("The rating of The Mask = %f", theMask.currentRating()));
 
     }
 }
