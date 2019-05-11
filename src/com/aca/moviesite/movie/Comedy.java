@@ -6,11 +6,10 @@ import java.util.ArrayList;
 
 public class Comedy extends Movie {
 
-    private static final String GENRE = "Comedy";
     public ArrayList<Integer> rating = new ArrayList<Integer>();
 
     public Comedy(String title, String description, String premiereDate, Person[] people) {
-        super(title, description, premiereDate, GENRE, people);
+        super(title, description, premiereDate, Genre.COMEDY, people);
     }
 
     @Override

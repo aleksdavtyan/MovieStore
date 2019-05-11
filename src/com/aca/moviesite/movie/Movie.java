@@ -9,13 +9,13 @@ public abstract class Movie {
     private String title;
     private String description;
     private String premiereDate;
-    private String genre;
+    private Genre genre;
 
     public ArrayList<Integer> rating = new ArrayList<Integer>();
     private Person[] people;
 
 
-    public Movie(String title, String description, String premiereDate, String genre, Person[] people) {
+    public Movie(String title, String description, String premiereDate, Genre genre, Person[] people) {
         this.title = title;
         this.description = description;
         this.premiereDate = premiereDate;
@@ -32,11 +32,11 @@ public abstract class Movie {
     }
 
     public String getPremiereDate() {
-        return title;
+        return premiereDate;
     }
 
-    public String getGenre() {
-        return title;
+    public Genre getGenre() {
+        return genre;
     }
 
     public double currentRating() {
@@ -49,7 +49,7 @@ public abstract class Movie {
         return calculatedRating;
     }
 
-//
+
 //    @Override
 //    public String toString() {
 //        return String.format("Movie title: %f.\nRating: %f.\nGenre: %f.\nPremiere date: %f.\nDescription: %f.\nPeople: %f", getTitle(), currentRating(), getGenre(), getPremiereDate(), getDescription());

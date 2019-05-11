@@ -51,14 +51,13 @@ public class MovieStore {
             user2.rateMovie(theAlgorithm, 7);
             user2.rateMovie(theMask,5);
             user2.rateMovie(theGodfather,8);
-            user2.rateMovie(spotlight, 5);
         }
 
         for (Movie movie : MovieDB.movies) {
             System.out.println(movie);
         }
         String searchResult = user1.searchMovie("The Mask");
-        commandLineUserInterface.output("The result of \"The Mask\" search is: " + searchResult);
+        commandLineUserInterface.output("The result of \"The Mask\" search is " + searchResult);
 
         commandLineUserInterface.output(String.format("The rating of The Algorithm = %f", theAlgorithm.currentRating()));
         commandLineUserInterface.output(String.format("The rating of The Mask = %f", theMask.currentRating()));

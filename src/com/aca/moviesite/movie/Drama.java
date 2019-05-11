@@ -10,7 +10,7 @@ public class Drama extends Movie {
     public ArrayList<Integer> rating = new ArrayList<Integer>();
 
     public Drama(String title, String description, String premiereDate, Person[] people) {
-        super(title, description, premiereDate, GENRE, people);
+        super(title, description, premiereDate, Genre.DRAMA, people);
     }
 
     @Override

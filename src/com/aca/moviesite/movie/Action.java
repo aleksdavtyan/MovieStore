@@ -6,11 +6,10 @@ import java.util.ArrayList;
 
 public class Action extends Movie {
 
-    private static final String GENRE = "Action";
     public ArrayList<Integer> rating = new ArrayList<Integer>();
 
     public Action(String title, String description, String premiereDate, Person[] people) {
-            super(title, description, premiereDate, GENRE, people);
+            super(title, description, premiereDate, Genre.ACTION, people);
     }
 
     @Override
