@@ -21,9 +21,9 @@ public class Admin extends User {
     }
 
     public boolean registerUser(User user) {
-        if (!user.equals(null) && !UserDB.users.containsKey(user.getUsername())) {
-            UserDB.users.put(user.getUsername(), user.getPassword());
-            UserDB.incrementId();
+        if (!user.equals(null) && !UserDB.getInstance().users.containsKey(user.getUsername())) {
+            UserDB.getInstance().users.put(user.getUsername(), user.getPassword());
+            UserDB.getInstance().incrementId();
             return true;
         } else {
             commandLineUserInterface.output("The username already exists. Please use a different username.");
@@ -32,8 +32,8 @@ public class Admin extends User {
     }
 
     public void removeUser(User user) {
-        if (UserDB.users.containsKey(user.getUsername())) {
-            UserDB.users.remove(user.getUsername());
+        if (UserDB.getInstance().users.containsKey(user.getUsername())) {
+            UserDB.getInstance().users.remove(user.getUsername());
         } else commandLineUserInterface.output("The user you are trying delete doesn't exist.");
     }
 

@@ -12,7 +12,6 @@ public class CommandLineUserInterface extends UserInterface {
 
     @Override
     public String readStr() {
-        //get Car Body Type
         Scanner strScanner = new Scanner(System.in);
         String carPartsNumbers;
         carPartsNumbers = strScanner.nextLine();

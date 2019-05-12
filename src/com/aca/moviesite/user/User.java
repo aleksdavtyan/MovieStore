@@ -28,7 +28,7 @@ public abstract class User {
     public static int getId() { return id; }
 
     public boolean signIn(User user) {
-        if (UserDB.users.containsKey(user.getUsername()) && UserDB.users.containsValue(user.getPassword())) {
+        if (UserDB.getInstance().users.containsKey(user.getUsername()) && UserDB.getInstance().users.containsValue(user.getPassword())) {
             return true;
         }
         return false;

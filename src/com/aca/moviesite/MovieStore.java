@@ -63,7 +63,7 @@ public class MovieStore {
         commandLineUserInterface.output(String.format("The rating of The Mask = %f", theMask.currentRating()));
         commandLineUserInterface.output(String.format("The rating of The Godfather = %f", theGodfather.currentRating()));
 
-        commandLineUserInterface.output("Number of users in the Database = " + UserDB.getId());
+        commandLineUserInterface.output("Number of users in the Database = " + UserDB.getInstance().getId());
         commandLineUserInterface.output("Number of movies in the Database = " + MovieDB.getInstance().getId());
 
     }

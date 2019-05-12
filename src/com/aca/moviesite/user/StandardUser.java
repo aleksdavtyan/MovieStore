@@ -16,7 +16,7 @@ public class StandardUser extends User {
     }
 
     public boolean signUp(User user) {
-        if (!UserDB.users.containsKey(user.getUsername())) {
+        if (!UserDB.getInstance().users.containsKey(user.getUsername())) {
             admin.registerUser(user);
             return true;
         }else return false;

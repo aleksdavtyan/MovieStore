@@ -12,7 +12,7 @@ public class MovieDB {
 
     private static MovieDB movieDB = new MovieDB();
 
-    public MovieDB() {}
+    private MovieDB() {}
 
     public static MovieDB getInstance() {  return movieDB;  }
 

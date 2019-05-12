@@ -5,15 +5,23 @@ import java.util.HashMap;
 
 public class UserDB {
 
-    private static int id;
+    private int id;
 
-    public static HashMap<String, String> users = new HashMap<>();
+    public HashMap<String, String> users = new HashMap<>();
 
-    public static void incrementId() {
+    private static final UserDB userDB = new UserDB();
+
+    private UserDB() {}
+
+    public static UserDB getInstance() {
+        return userDB;
+    }
+
+    public void incrementId() {
         id++;
     }
 
-    public static int getId() {
+    public int getId() {
         return id;
     }
 }
