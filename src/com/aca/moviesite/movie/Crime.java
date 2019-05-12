@@ -14,7 +14,7 @@ public class Crime extends Movie {
     }
 
     @Override
-    public String toString() {return "Action: " + super.toString(); }
+    public String toString() {return "|Crime|\n" + super.toString(); }
 
     @Override
     public double currentRating() {

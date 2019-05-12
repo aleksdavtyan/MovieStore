@@ -13,7 +13,7 @@ public class Historical extends Movie {
     }
 
     @Override
-    public String toString() {return "Action: " + super.toString(); }
+    public String toString() {return "|Historical|\n" + super.toString(); }
 
     @Override
     public double currentRating() {

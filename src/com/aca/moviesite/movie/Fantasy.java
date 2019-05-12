@@ -13,7 +13,7 @@ public class Fantasy extends Movie {
     }
 
     @Override
-    public String toString() {return "Action: " + super.toString(); }
+    public String toString() {return "|Fantasy|\n" + super.toString(); }
 
     @Override
     public double currentRating() {

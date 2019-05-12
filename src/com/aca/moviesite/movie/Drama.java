@@ -13,7 +13,7 @@ public class Drama extends Movie {
     }
 
     @Override
-    public String toString() {return "Action: " + super.toString(); }
+    public String toString() {return "|Drama|\n" + super.toString(); }
 
     @Override
     public double currentRating() {
