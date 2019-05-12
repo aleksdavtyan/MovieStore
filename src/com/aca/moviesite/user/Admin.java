@@ -39,16 +39,16 @@ public class Admin extends User {
 
     public static boolean addMovie(Movie movie) {
         if (!movie.equals(null)) {
-            MovieDB.movies.add(movie);
-            MovieDB.incrementId();
+            MovieDB.getInstance().movies.add(movie);
+            MovieDB.getInstance().incrementId();
             return true;
         }
         return false;
     }
 
     public boolean removeMovie(Movie movie) {
-        if (MovieDB.movies.contains(movie)) {
-            MovieDB.movies.remove(movie);
+        if (MovieDB.getInstance().movies.contains(movie)) {
+            MovieDB.getInstance().movies.remove(movie);
             return true;
         } else commandLineUserInterface.output("The movie you are trying delete doesn't exist.");
         return false;
@@ -78,7 +78,7 @@ public class Admin extends User {
 
     @Override
     public String searchMovie(String movieTitle) {
-        for (Movie movie1 : MovieDB.movies) {
+        for (Movie movie1 : MovieDB.getInstance().movies) {
             if (movie1.getTitle().equals(movieTitle)) {
                 return movie1.toString();
             }

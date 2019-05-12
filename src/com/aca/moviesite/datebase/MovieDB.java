@@ -6,15 +6,19 @@ import java.util.ArrayList;
 
 public class MovieDB {
 
-    private static int id;
+    private int id;
 
-    public static ArrayList<Movie> movies = new ArrayList<>();
+    public ArrayList<Movie> movies = new ArrayList<>();
 
-    public static void incrementId() {
-        id++;
-    }
+    private static MovieDB movieDB = new MovieDB();
 
-    public static int getId() {
+    public MovieDB() {}
+
+    public static MovieDB getInstance() {  return movieDB;  }
+
+    public void incrementId() {  id++;  }
+
+    public int getId() {
         return id;
     }
 }

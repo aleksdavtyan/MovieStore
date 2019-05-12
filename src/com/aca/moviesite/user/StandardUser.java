@@ -10,7 +10,6 @@ public class StandardUser extends User {
     Admin admin = new Admin();
 
 
-
     public StandardUser(String username, String password) {
         super(username, password);
         id = User.getId();
@@ -46,7 +45,7 @@ public class StandardUser extends User {
 
     @Override
     public String searchMovie(String movieTitle) {
-        for (Movie movie1 : MovieDB.movies) {
+        for (Movie movie1 : MovieDB.getInstance().movies) {
             if (movie1.getTitle().equals(movieTitle)) {
                 return movie1.toString();
             }

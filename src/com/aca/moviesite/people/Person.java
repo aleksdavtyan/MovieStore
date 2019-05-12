@@ -8,7 +8,6 @@ public abstract class Person {
     private String bio;
     private ArrayList<String> movies;
 
-
     public Person(String fullName, String bio) {
         this.fullName = fullName;
         this.bio = bio;

@@ -53,7 +53,7 @@ public class MovieStore {
             user2.rateMovie(theGodfather,8);
         }
 
-        for (Movie movie : MovieDB.movies) {
+        for (Movie movie : MovieDB.getInstance().movies) {
             System.out.println(movie);
         }
         String searchResult = user1.searchMovie("The Mask");
@@ -63,8 +63,8 @@ public class MovieStore {
         commandLineUserInterface.output(String.format("The rating of The Mask = %f", theMask.currentRating()));
         commandLineUserInterface.output(String.format("The rating of The Godfather = %f", theGodfather.currentRating()));
 
-        commandLineUserInterface.output("Number of users in the Database= " + UserDB.getId());
-        commandLineUserInterface.output("Number of movies in the Database= " + MovieDB.getId());
+        commandLineUserInterface.output("Number of users in the Database = " + UserDB.getId());
+        commandLineUserInterface.output("Number of movies in the Database = " + MovieDB.getInstance().getId());
 
     }
 }
